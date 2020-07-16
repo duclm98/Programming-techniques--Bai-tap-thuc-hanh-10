@@ -1,4 +1,4 @@
-﻿// Bai02_SList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// Bai02_DList.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include "Queue.h"

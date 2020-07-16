@@ -1,4 +1,4 @@
-﻿// Bai02_SList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// Bai02_EArray.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include "Queue.h"
@@ -13,8 +13,6 @@ int main()
 	enqueue(q, -13);
 	enqueue(q, 342);
 
-	cout << "dequeue: " << dequeue(q) << endl;
-	cout << "peek: " << peek(q) << endl;
 	cout << "dequeue: " << dequeue(q) << endl;
 	cout << "peek: " << peek(q) << endl;
 

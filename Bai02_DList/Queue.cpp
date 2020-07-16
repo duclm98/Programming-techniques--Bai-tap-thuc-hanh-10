@@ -31,13 +31,21 @@ void enqueue(QUEUE* q, int item) {
 		return;
 	}
 	q->top++;
+
 	NODE* node = new NODE;
 	node->data = item;
-	node->next = q->array->head;
-	q->array->head = node;
-	if (q->top == 0) {
-		q->array->tail = node;
+
+	if (q->array->head == NULL && q->array->tail == NULL) {
+		q->array->head = q->array->tail = node;
+		node->next = node->prev = NULL;
+		return;
 	}
+
+	node->next = q->array->head;
+	node->prev = NULL;
+
+	q->array->head->prev = node;
+	q->array->head = node;
 }
 
 int dequeue(QUEUE* q) {
@@ -46,11 +54,7 @@ int dequeue(QUEUE* q) {
 	}
 	NODE* node = q->array->tail;
 	int data = node->data;
-	NODE* p = q->array->head;
-	while (p->next != q->array->tail)
-	{
-		p = p->next;
-	}
+	NODE* p = q->array->tail->prev;
 	p->next = NULL;
 	q->array->tail = p;
 
